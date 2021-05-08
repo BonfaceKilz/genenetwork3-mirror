@@ -1,14 +1,7 @@
 """Main entry point for project"""
 
-from flask import Flask
-app = Flask(__name__)
+from gn3.app import create_app
 
 
-@app.route("/")
-def hello():
-    """Test hello world"""
-    return "Hello World!"
-
-
-if __name__ == '__main__':
-    app.run()
+app = create_app()
+app.run(host="0.0.0.0")
